@@ -1,4 +1,4 @@
-# TA-Lib in GithubActions
+# TA-Lib in Github Actions
 
 This is a quick & dirty sample repo to help you setup [TA-Lib](https://ta-lib.org/), for example if you want to use the python's [ta-lib wrapper](https://mrjbq7.github.io/ta-lib/).
 
