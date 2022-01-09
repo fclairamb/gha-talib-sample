@@ -1,0 +1,44 @@
+name: Tests
+on: push
+
+jobs:
+  tests:
+    timeout-minutes: 5
+    runs-on: ubuntu-20.04
+    steps:
+      # Downloads a copy of the code in your repository before running CI tests
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      - name: Cache talib
+        id: cache-talib
+        uses: actions/cache@v2
+        with:
+          path: ta-lib
+          key: ${{ runner.os }}-talib
+      - name: Build talib
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          curl http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz -L -o ta-lib-0.4.0-src.tar.gz
+          tar -xzf ta-lib-0.4.0-src.tar.gz
+          cd ta-lib
+          ./configure --prefix=/usr
+          make
+          sudo make install
+      - name: Install talib
+        run: |
+          cd ta-lib
+          sudo make install
+      - name: Install pipenv
+        run: pip install pipenv
+      - name: Installing dependencies
+        run: pipenv install -d --ignore-pipfile
+      - name: Run tests
+        run: |
+          PYTHONPATH=$(pwd) pipenv run pytest -v --cov-report=xml --cov=.
+      - name: Send coverage data
+        uses: codecov/codecov-action@v2
