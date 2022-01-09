@@ -39,4 +39,4 @@ jobs:
         run: pipenv install -d --ignore-pipfile
       - name: Run tests
         run: |
-          PYTHONPATH=$(pwd) pipenv run pytest -v
+          pipenv run pytest -v
