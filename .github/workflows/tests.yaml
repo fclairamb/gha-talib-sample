@@ -21,7 +21,7 @@ jobs:
           path: ta-lib
           key: ${{ runner.os }}-talib
       - name: Build talib
-        if: steps.cache.outputs.cache-hit != 'true'
+        if: steps.cache-talib.outputs.cache-hit != 'true'
         run: |
           curl http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz -L -o ta-lib-0.4.0-src.tar.gz
           tar -xzf ta-lib-0.4.0-src.tar.gz
