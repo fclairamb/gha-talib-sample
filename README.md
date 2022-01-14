@@ -19,7 +19,6 @@ Add the following lines to your github actions file:
           cd ta-lib
           ./configure --prefix=/usr
           make
-          sudo make install
       - name: Install talib
         run: |
           cd ta-lib

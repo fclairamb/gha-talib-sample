@@ -28,7 +28,6 @@ jobs:
           cd ta-lib
           ./configure --prefix=/usr
           make
-          sudo make install
       - name: Install talib
         run: |
           cd ta-lib
