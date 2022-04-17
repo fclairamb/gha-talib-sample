@@ -8,7 +8,7 @@ ta-lib = "==0.4.24"
 numpy = "==1.22.3"
 
 [dev-packages]
-pytest = "==6.2.5"
+pytest = "==7.1.1"
 
 [requires]
 python_version = "3.9"
