@@ -4,10 +4,6 @@
   "separateMinorPatch": true,
   "packageRules": [
     {
-      "updateTypes": [
-        "minor",
-        "patch"
-      ],
       "automerge": true,
       "labels": [
         "automerge"
