@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 ta-lib = "==0.4.24"
-numpy = "==1.23.1"
+numpy = "==1.23.2"
 
 [dev-packages]
 pytest = "==7.1.2"
