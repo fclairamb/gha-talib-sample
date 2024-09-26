@@ -4,7 +4,7 @@ on: push
 jobs:
   tests:
     timeout-minutes: 5
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       # Downloads a copy of the code in your repository before running CI tests
       - name: Check out repository code
