@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-ta-lib = "==0.5.3"
+ta-lib = "==0.5.4"
 numpy = "==1.26.4"
 
 [dev-packages]
