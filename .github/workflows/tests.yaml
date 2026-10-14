@@ -10,10 +10,10 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v7
 
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: Set up Python 3.12
         uses: actions/setup-python@v7
         with:
-          python-version: '3.9'
+          python-version: '3.12'
       - name: Cache talib
         id: cache-talib
         uses: actions/cache@v6
